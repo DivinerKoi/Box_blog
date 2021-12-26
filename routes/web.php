@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('login');
 });
+Route::get('/','StaticPagesController@home')->name('home');
+Route::get('signup', 'UsersController@create')->name('signup');
