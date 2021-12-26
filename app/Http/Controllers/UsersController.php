@@ -14,4 +14,20 @@ class UsersController extends Controller
     public function show(User $user){
         return view('users.show',compact('user'));
     }
+
+    //用户创建时的规则的方法
+    public function store(Request $request){
+        $this->validate($request,[
+            'name'=>'required|unique:users|max:50',
+            'email' => 'required|email|unique:users|max:255',
+            'password' => 'required|confirmed|min:6'
+        ]);
+        $user=User::create([
+            'name' => $request->name,
+            'email' => $request->email,
+            'password' => bcrypt($request->password),
+        ]);
+        session()->flash('success', '欢迎进入BOX博客，这里将是您的世界！');
+        return redirect()->route('users.show',[$user]);
+    }
 }

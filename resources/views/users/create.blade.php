@@ -1,31 +1,34 @@
 @extends('shared.default')
 @section('content')
-<form class="form-horizontal" role="form">
-  <div class="form-group">
-    <label for="firstname" class="col-sm-2 control-label">名字</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="firstname" placeholder="请输入名字">
+<div class="offset-md-2 col-md-8">
+    <div class="card ">
+        <div class="card-header">
+            <h5 style="text-align: center;">注册</h5>
+        </div>
+        <div class="card-body">
+            @include('shared._errors')
+            <form method="POST" action="{{ route('users.store') }}">
+                {{ csrf_field() }}
+                <div class="form-group">
+                    <label for="name">名称：</label>
+                    <input type="text" name="name" class="form-control" value="{{ old('name') }}">
+                </div>
+                <div class="form-group">
+                    <label for="email">邮箱：</label>
+                    <input type="text" name="email" class="form-control" value="{{ old('email') }}">
+                </div>
+                <div class="form-group">
+                    <label for="password">密码：</label>
+                    <input type="password" name="password" class="form-control" value="{{ old('password') }}">
+                </div>
+                <div class="form-group">
+                    <label for="password_confirmation">确认密码:</label>
+                    <input type="password" name="password_confirmation" class="form-control"
+                        value="{{ old('password_confirmation') }}">
+                </div>
+                <button type="submit" class="btn btn-primary">注册</button>
+            </form>
+        </div>
     </div>
-  </div>
-  <div class="form-group">
-    <label for="lastname" class="col-sm-2 control-label">姓</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="lastname" placeholder="请输入姓">
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <div class="checkbox">
-        <label>
-          <input type="checkbox">请记住我
-        </label>
-      </div>
-    </div>
-  </div>
-  <div class="form-group">
-    <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default">登录</button>
-    </div>
-  </div>
-</form>
+</div>
 @stop
