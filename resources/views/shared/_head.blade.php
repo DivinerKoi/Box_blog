@@ -24,7 +24,7 @@
             </li>
             @else
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="{{route('login')}}">
                     <button type="button" class="btn btn-info">登录</button>
                 </a>
             </li>
