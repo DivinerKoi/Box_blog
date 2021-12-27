@@ -7,9 +7,27 @@ body {
 nav.navbar.navbar-expand-lg {
     margin-bottom: 20px;
 }
-body{
-    background-color: bisque;
-}
+// body{
+//     background-color: bisque;
+// }
  nav{
      background-color: #0056b3
  }
+ // .ca{
+ //     background-color: greenyellow;
+ // }
+ .btn-group-vertical{
+     // margin: 15px;
+     padding: 0;
+     // float: left;
+
+ }
+
+.container{
+     margin: 0;
+     padding: 0;
+ }
+.btn-group-vertical button{
+    width: 100px;
+    height: 50px;
+}

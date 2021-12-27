@@ -25,16 +25,25 @@
             @else
             <li class="nav-item">
                 <a class="nav-link" href="{{route('login')}}">
-                    <button type="button" class="btn btn-info">登录</button>
+                    <button type="button" class="btn btn-primary">登录</button>
                 </a>
             </li>
-            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                Sony <span class="caret"></span></button>
-            <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Tablet</a></li>
-                <li><a href="#">Smartphone</a></li>
-            </ul>
-            @endif
-        </ul>
+            <div class="btn-group" >
+                <button type="button" class="btn btn-primary">更多</button>
+               <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                    <span class="caret"></span>
+                </button>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">关于BOX</a>
+                    <a class="dropdown-item" href="#">其他功能</a>
+                </div>
+                <!-- <ul class="dropdown-menu" role="menu">
+                    <li><a href="#">关于BOX</a></li>
+                    <li><a href="#">其他功能</a></li>
+                </ul> -->
+            </div>
+    </div>
+    @endif
+    </ul>
     </div>
 </nav>

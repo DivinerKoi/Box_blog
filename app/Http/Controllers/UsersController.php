@@ -11,8 +11,8 @@ class UsersController extends Controller
         $this->middleware('auth', [
             'except' => ['show', 'create', 'store']
         ]);
-        $this->middleware('guest', [ 
-            'only' => ['create'] 
+        $this->middleware('guest', [
+            'only' => ['create']
         ]);
     }
 
@@ -61,7 +61,7 @@ class UsersController extends Controller
             $data['password'] = bcrypt($request->password);
             }
             $user->update($data);
-            session()->flash('success', '个人资料更新成功！');
+            // session()->flash('success', '个人资料更新成功！');
         return redirect()->route('users.show', $user);
     }
 }

@@ -10027,10 +10027,20 @@ nav.navbar.navbar-expand-lg {
   margin-bottom: 20px;
 }
 
-body {
-  background-color: bisque;
-}
-
 nav {
   background-color: #0056b3;
+}
+
+.btn-group-vertical {
+  padding: 0;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+}
+
+.btn-group-vertical button {
+  width: 100px;
+  height: 50px;
 }
