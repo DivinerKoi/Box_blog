@@ -32,4 +32,8 @@ Route::get('login', 'SessionsController@create')->name('login');
 Route::post('login', 'SessionsController@store')->name('login');
 Route::delete('logout', 'SessionsController@destroy')->name('logout');
 
-Route::get('java','ContentController@content')->name('tojava');
+Route::get('java','ContentController@content1')->name('java');
+Route::get('php','ContentController@content2')->name('php');
+Route::get('python','ContentController@content3')->name('python');
+
+Route::resource('statuses', 'StatusesController', ['only' => ['store', 'destroy']]);

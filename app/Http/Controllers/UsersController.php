@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 class UsersController extends Controller
 {
 
@@ -21,8 +22,14 @@ class UsersController extends Controller
         return view('users.create');//跳转到注册页面
     }
 
-    public function show(User $user){
-        return view('users.show',compact('user'));
+    // public function show(User $user){
+    //     return view('users.show',compact('user'));
+    // }
+    public function show(User $user) {
+        $statuses = $user->statuses()
+                  ->orderBy('created_at', 'desc')
+                  ->paginate(3);
+            return view('users.show', compact('user', 'statuses'));
     }
 
     //用户创建时的规则的方法
